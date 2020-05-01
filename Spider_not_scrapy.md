@@ -2,7 +2,7 @@
 - 安装python，推荐直接安装anoconda或者miniconda，不用折腾
 - 编辑器推荐VS code，轻便且功能强大
 - 下载chromedriver，并置于系统环境
-## 1.最常用的requests
+## 1. 最常用的requests
 ###### 优先考虑requests爬取
 ```python
 import requests
@@ -17,7 +17,7 @@ f = open("spider.txt","w",encoding="utf-8")
 f.write(rq.text) # 爬取的东西写到文本里
 f.close() # 记得关闭
 ```
-##### 2.网页内容定位(文本)
+## 2. 网页内容定位(文本)
 ###### xpath定位或者css定位，不推荐beautifulsoup(较麻烦且较前者无显著优势)
 ```python
 # 注意该代码块紧跟上一个代码块
@@ -33,7 +33,7 @@ print(tdxpath.split("迪")[1]) # split切片
 import re
 print("".join(re.findall('[A-Z0-9]',tdxpath))) # findall函数非常重要，可以自己学习
 ```
-##### 2.网页内容定位并下载(非文本)
+## 2.1 网页内容定位并下载(非文本)
 ```python
 # 注意该代码块紧跟上一个代码块
 # 下载图片
@@ -43,13 +43,13 @@ img = requests.get(url=url1).content # 图片内容
 with open('a.jpg','wb') as f:
     f.write(img) # 下载图片，用with open()就不需要f.close()
 ```
-##### 3.不能直接定位（动态加载）
+## 3.不能直接定位（动态加载）
 ```python
 # 注意该代码块紧跟上一个代码块
 td=tree.xpath('//*[@id="tr2,2,2_0,1,2"]/td[1]')
 print(td) # 无法定位详细数据，动态加载，解析或者考虑Selenium
 ```
-##### 4.selenium爬取（动态加载）
+## 4.selenium爬取（动态加载）
 ###### 一般通过js或xhr实现动态加载，有兴趣的可以解析后用requests，没兴趣或者很难解析的直接用selenium
 ```python
 from selenium import webdriver
@@ -74,7 +74,7 @@ for num in range(1,(t+1)):
     f.close() # 记得关
 driver.quit()
 ```
-##### 5.post网页爬取
+## 5.post网页爬取
 ###### post网站，网页内容变化但是网址不变
 ```python
 import requests
@@ -95,7 +95,7 @@ a = requests.post(url,data=formdata,headers=header)
 f.write(a.text)
 a.close()  # 关闭访问,养成好习惯​
 ```
-##### 6.selenium爬取post网站
+## 6.selenium爬取post网站
 ###### 有些post网页中会有动态加载，不想解析的话可以用selenium一并解决
 ```python
 from selenium import webdriver
@@ -118,4 +118,3 @@ driver.find_element_by_xpath('//*[@id="txt_1_value1"]').send_keys(keys.Keys.RETU
 print(driver.find_element_by_xpath('//*[@id="SCDB"]/a').text) # 用.text来取文本部分
 print(driver.find_element_by_xpath('//*[@id="HeaderDiv"]/div[1]/div[2]/a/img[1]').get_attribute("src")) # 用.get_attribute来获取属性
 ```
-###### 附（for myself）：pdf处理比较麻烦，pdf可以用pdfminer包来转文本，但是建议用adobe acrobat来直接转，后者转换能力更强。
