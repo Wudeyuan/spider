@@ -3,7 +3,7 @@
 - [spider_not_scrapy ](https://github.com/Wudeyuan/spider/blob/master/Spider_not_scrapy.md)包含两个部分，第一是<kbd>requests</kbd>，第二是<kbd>selenium</kbd>。
 ><i>requests</i> 包含获取网页、网页内容定位、网页内容下载  
 ><i>selenium</i> 包含获取网页、网页内容定位
-- [spider_scrapy ](https://github.com/Wudeyuan/spider/tree/master/Spider_scrapy/wheather),具体代码在wheather文件夹下
+- [spider_scrapy ](https://github.com/Wudeyuan/spider/tree/master/Spider_scrapy/wheather),具体代码在<kbd>wheather</kbd>文件夹下
 1. 生成框架，cmd中依次运行以下代码：
 ```cmd
 :: scrapy包用conda来安装
