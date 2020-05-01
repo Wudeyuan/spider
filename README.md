@@ -20,4 +20,5 @@ scrapy shell https://www.aqistudy.cn/historydata/
 view(response)
 ```
 >修改各个文件
-> 1. 修改items,定义好需要爬取的变量
+1. 修改items,定义好需要爬取的变量
+
