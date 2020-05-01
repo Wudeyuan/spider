@@ -20,10 +20,10 @@ scrapy shell https://www.aqistudy.cn/historydata/
 view(response)
 ```
 2. 修改各个文件（具体修改见文件）
-> 修改items，定义好需要爬取的变量
-> 编辑Pipelines，增加输出格式，也可以不改
-> 编辑settings文件，案例用了selenium，需要下载好chromedriver.exe
-> 编辑爬虫文件Wheather
+> 修改*items*，定义好需要爬取的变量  
+> 编辑*Pipelines*，增加输出格式，也可以不改  
+> 编辑*settings*文件，案例用了selenium，需要下载好chromedriver.exe  
+> 编辑爬虫文件*Wheather* 
 3. 运行代码
 ```cmd
 cd wheather
