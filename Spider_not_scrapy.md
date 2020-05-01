@@ -1,9 +1,8 @@
-###### 流程：requests— xpath、css定位（文本）—定位并下载（非文本）— 动态加载（selenium）—post网站—selenium爬取post
-##### 准备工作
+## 准备工作
 - 安装python，推荐直接安装anoconda或者miniconda，不用折腾
-- 编辑器推荐VS code，轻便且功能强大，不推荐sublime（配置较麻烦），较不推荐pycharm（代码提示能力很强，但是有种看用ps看图片的感觉，不适合日常使用）
+- 编辑器推荐VS code，轻便且功能强大
 - 下载chromedriver，并置于系统环境
-##### 1.最常用的requests
+## 1.最常用的requests
 ###### 优先考虑requests爬取
 ```python
 import requests
