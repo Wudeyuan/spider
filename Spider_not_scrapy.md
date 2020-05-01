@@ -7,8 +7,8 @@
 ```python
 import requests
 url='http://car.bitauto.com/aodia3-3999/peizhi/'
-head=dict() # 设置agent
-head['User-Agent'] = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36'  # 添加代理，有些网站回识别requests，加浏览器代理，百利无害
+head=dict() # 设置agent,除了agent还可以添加很多其他东西
+head['User-Agent'] = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36'  # 添加代理，有些网站回识别requests，加浏览器代理，百利无害
 rq=requests.get(url=url,headers=head)  # 爬取
 rq.encoding="utf-8"  # 或者用rq.content.decode('utf-8'),需要看网页是用什么编码写的，乱码了考虑utf-8换成gbk
 print(rq.text)
@@ -84,8 +84,9 @@ url = 'http://www.chinanpo.gov.cn/search/orgcx.html'
 header={
     'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36',
     'Referer':'http://www.chinanpo.gov.cn/search/orgcx.html'
-} #request headers部分，Cookie有时候是必要的，这里没加上
-## 注意requests.get也可以用上述字典，比只加agent效果可能会更好！！！！！
+} 
+# request headers部分，Cookie有时候是必要的，这里没加上
+# 注意requests.get也可以用上述字典，比只加agent效果可能会更好！！！！！
 formdata = dict(tabIndex=2,
                t=2,
                orgName=r'%E5%8C%BB%E9%99%A2', # 医院的网页解码
@@ -93,7 +94,7 @@ formdata = dict(tabIndex=2,
                regDateEnd='2018-07-28') # formdata部分
 a = requests.post(url,data=formdata,headers=header)
 f.write(a.text)
-a.close()  # 关闭访问,养成好习惯​
+a.close()  # 关闭访问,养成好习惯
 ```
 ## 6. <i>selenium</i>爬取</i>post</i>网站
 ###### 有些<i>post</i>网页中会有动态加载，不想解析的话可以用<i>selenium</i>一并解决
