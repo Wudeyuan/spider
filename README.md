@@ -20,5 +20,13 @@ scrapy shell https://www.aqistudy.cn/historydata/
 view(response)
 ```
 >修改各个文件
-1. 修改items,定义好需要爬取的变量
-
+1. 修改items，定义好需要爬取的变量
+2. 编辑Pipelines，增加输出格式，也可以不改
+3. 编辑settings文件，案例用了selenium，需要下载好chromedriver.exe
+4. 编辑爬虫文件Wheather
+>运行代码
+```cmd
+cd wheather
+:: 输出为csv格式
+scrapy crawl Wheather -o books.csv
+```
