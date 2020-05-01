@@ -2,8 +2,8 @@
 - 安装python，推荐直接安装anoconda或者miniconda，不用折腾
 - 编辑器推荐VS code，轻便且功能强大
 - 下载chromedriver，并置于系统环境
-## 1. 最常用的requests
-###### 优先考虑requests爬取
+## 1. 最常用的<i>requests</i>
+###### 优先考虑<i>requests</i>爬取
 ```python
 import requests
 url='http://car.bitauto.com/aodia3-3999/peizhi/'
@@ -18,7 +18,7 @@ f.write(rq.text) # 爬取的东西写到文本里
 f.close() # 记得关闭
 ```
 ## 2. 网页内容定位(文本)
-###### xpath定位或者css定位，不推荐beautifulsoup(较麻烦且较前者无显著优势)
+###### <i>xpath</i>定位或者<i>css</i>定位，不推荐beautifulsoup(较麻烦且较前者无显著优势)
 ```python
 # 注意该代码块紧跟上一个代码块
 import lxml.html as path
@@ -43,14 +43,14 @@ img = requests.get(url=url1).content # 图片内容
 with open('a.jpg','wb') as f:
     f.write(img) # 下载图片，用with open()就不需要f.close()
 ```
-## 3.不能直接定位（动态加载）
+## 3. 不能直接定位（动态加载）
 ```python
 # 注意该代码块紧跟上一个代码块
 td=tree.xpath('//*[@id="tr2,2,2_0,1,2"]/td[1]')
 print(td) # 无法定位详细数据，动态加载，解析或者考虑Selenium
 ```
-## 4.selenium爬取（动态加载）
-###### 一般通过js或xhr实现动态加载，有兴趣的可以解析后用requests，没兴趣或者很难解析的直接用selenium
+## 4. <i>selenium</i>爬取（动态加载）
+###### 一般通过js或xhr实现动态加载，有兴趣的可以解析后用<i>requests</i>，没兴趣或者很难解析的直接用<i>selenium</i>
 ```python
 from selenium import webdriver
 
@@ -74,8 +74,8 @@ for num in range(1,(t+1)):
     f.close() # 记得关
 driver.quit()
 ```
-## 5.post网页爬取
-###### post网站，网页内容变化但是网址不变
+## 5. <i>post</i>网页爬取
+###### <i>post</i>网站，网页内容变化但是网址不变
 ```python
 import requests
 
@@ -95,8 +95,8 @@ a = requests.post(url,data=formdata,headers=header)
 f.write(a.text)
 a.close()  # 关闭访问,养成好习惯​
 ```
-## 6.selenium爬取post网站
-###### 有些post网页中会有动态加载，不想解析的话可以用selenium一并解决
+## 6. <i>selenium</i>爬取</i>post</i>网站
+###### 有些<i>post</i>网页中会有动态加载，不想解析的话可以用<i>selenium</i>一并解决
 ```python
 from selenium import webdriver
 from selenium.webdriver.support.select import Select
